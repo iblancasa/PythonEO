@@ -1,5 +1,5 @@
 #!/usr/bin/env python
-
+import time
 from pythoneo import *
 
 # Mutate and compute time
@@ -16,6 +16,6 @@ iterations = 1000000
 top_length = 32768
 
 while not length > top_length:
-#    indi = new Chromosome (nodeo.utils.random( length ) )
-    print("lua, BitString, " + length +", "+ time_mutations( iterations, indi ))
+    indi =  random_chromosome(length)
+    print("lua, BitString, " + str(length) +", "+ str(time_mutations( iterations, indi )))
     length = length*2
