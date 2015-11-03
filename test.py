@@ -20,6 +20,7 @@ class Tester(unittest.TestCase):
             self.assertIsNotNone(len(population[i]), "length is none")
             self.assertEqual(len(population[i]),chromosome_length, "lengh are not equal")
             mutated = mutate1(population[i])
+            self.assertEqual(len(population[i]),len(mutated),"mutate and original length are not equal")
             self.assertNotEqual(population[i], mutated, "mutated and population[i] are equal")
 
 

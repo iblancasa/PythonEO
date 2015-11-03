@@ -17,11 +17,10 @@ def compute_fitness(chromosome):
 
 # Mutate all chromosomes in the population
 def mutate1(chromosome):
-    print(chromosome)
     mutation_point = randint(0,len(chromosome)-1)
     temp = chromosome
-    mutie = temp[mutation_point-1]
-    # printprint( "M " + str(mutation_point) + " - " + temp[mutation_point])
+    mutie = temp[:mutation_point]
+    # print( "M " + str(mutation_point) + " - " + temp[mutation_point])
 
     if temp[mutation_point]=="1":
         mutie += "0"
@@ -29,7 +28,10 @@ def mutate1(chromosome):
         mutie += "1"
 
     mutie += temp[mutation_point+1:]
-    print(mutie)
+
+    #print(chromosome)
+    #print(mutie)
+
     return mutie
 
 
@@ -50,3 +52,6 @@ def crossover(chrom1, chrom2):
     new_chrom1 += new_chrom1[xover_point+range+1:length]
     new_chrom2 += new_chrom2[xover_point+range+1:length]
     return (new_chrom1,new_chrom2)
+
+
+mutate("1111")
