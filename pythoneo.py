@@ -10,10 +10,7 @@ def random_chromosome(length):
 
 # Computes maxOnes fitness
 def compute_fitness(chromosome):
-    ones = 0
-    for i in chromosome:
-        ones += int(i)
-    return ones
+    return chromosome.count("1")
 
 # Mutate all chromosomes in the population
 def mutate1(chromosome):
@@ -38,7 +35,8 @@ def mutate1(chromosome):
 # Mutate all chromosomes in the population
 def mutate (pool):
     for i in pool:
-        pool = mutate1(pool)
+        i = mutate1(i)
+
 
 # Crossover
 def crossover(chrom1, chrom2):
@@ -52,6 +50,3 @@ def crossover(chrom1, chrom2):
     new_chrom1 += new_chrom1[xover_point+range+1:length]
     new_chrom2 += new_chrom2[xover_point+range+1:length]
     return (new_chrom1,new_chrom2)
-
-
-mutate("1111")
