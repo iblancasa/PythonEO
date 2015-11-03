@@ -17,6 +17,7 @@ def compute_fitness(chromosome):
 
 # Mutate all chromosomes in the population
 def mutate1(chromosome):
+    print(chromosome)
     mutation_point = randint(0,len(chromosome)-1)
     temp = chromosome
     mutie = temp[mutation_point-1]
@@ -28,6 +29,7 @@ def mutate1(chromosome):
         mutie += "1"
 
     mutie += temp[mutation_point+1:]
+    print(mutie)
     return mutie
 
 
