@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 
 from random import *
-
+import math
 
 # Create a random chromosome
 def random_chromosome(length):
@@ -36,17 +36,22 @@ def mutate1(chromosome):
 def mutate (pool):
     for i in pool:
         i = mutate1(i)
+    return pool
 
 
 # Crossover
 def crossover(chrom1, chrom2):
     length = len(chrom1)
-    xover_point = math.floor(randint(length - 1))
-    range = 1 + math.floor(randint(length - xover_point))
-    new_chrom1 = new_chrom1[:xover_point-1]
-    new_chrom2 = new_chrom2[:xover_point-1]
-    new_chrom1 += new_chrom2[xover_point:xover_point+range]
-    new_chrom2 += new_chrom1[xover_point:xover_point+range]
-    new_chrom1 += new_chrom1[xover_point+range+1:length]
-    new_chrom2 += new_chrom2[xover_point+range+1:length]
+    xover_point = math.floor(randint(0,length - 1))
+    range = 1 + math.floor(randint(0,length - xover_point))
+
+    new_chrom1 = chrom1[:xover_point-1]
+    new_chrom2 = chrom2[:xover_point-1]
+
+    new_chrom1 += chrom2[xover_point:xover_point+range]
+    new_chrom2 += chrom1[xover_point:xover_point+range]
+
+    new_chrom1 += chrom1[xover_point+range+1:length]
+    new_chrom2 += chrom2[xover_point+range+1:length]
+
     return (new_chrom1,new_chrom2)
