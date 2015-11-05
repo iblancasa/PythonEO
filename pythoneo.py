@@ -1,33 +1,30 @@
 #!/usr/bin/env python
 
 from random import *
-import math
 
 # Create a random chromosome
 def random_chromosome(length):
-    return "".join([str(randint(0, 1)) for b in range(1, length + 1)])
+    return  [randint(0, 1) for b in range(1, length + 1)]
 
 
 # Computes maxOnes fitness
 def compute_fitness(chromosome):
-    return chromosome.count("1")
+    return chromosome.count(1)
 
 # Mutate all chromosomes in the population
 def mutate1(chromosome):
     mutation_point = randint(0,len(chromosome)-1)
     temp = chromosome
-    mutie = temp[:mutation_point]
+
+    mutie = temp[:mutation_point][:]
     # print( "M " + str(mutation_point) + " - " + temp[mutation_point])
 
-    if temp[mutation_point]=="1":
-        mutie += "0"
+    if temp[mutation_point]==1:
+        mutie.append(0)
     else:
-        mutie += "1"
+        mutie.append(1)
 
     mutie += temp[mutation_point+1:]
-
-    #print(chromosome)
-    #print(mutie)
 
     return mutie
 
