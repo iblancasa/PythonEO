@@ -43,15 +43,15 @@ def mutate (pool):
 def crossover(chrom1, chrom2):
     length = len(chrom1)
     xover_point = math.floor(randint(0,length - 1))
-    range = 1 + math.floor(randint(0,length - xover_point))
+    scope = 1 + math.floor(randint(0,length - xover_point))
 
     new_chrom1 = chrom1[:xover_point-1]
     new_chrom2 = chrom2[:xover_point-1]
 
-    new_chrom1 += chrom2[xover_point:xover_point+range]
-    new_chrom2 += chrom1[xover_point:xover_point+range]
+    new_chrom1 += chrom2[xover_point:xover_point+scope]
+    new_chrom2 += chrom1[xover_point:xover_point+scope]
 
-    new_chrom1 += chrom1[xover_point+range+1:length]
-    new_chrom2 += chrom2[xover_point+range+1:length]
+    new_chrom1 += chrom1[xover_point+scope+1:length]
+    new_chrom2 += chrom2[xover_point+scope+1:length]
 
     return (new_chrom1,new_chrom2)
