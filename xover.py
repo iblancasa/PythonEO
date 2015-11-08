@@ -7,7 +7,7 @@ def time_mutations(number, indi, other_indi):
     inicioTiempo = time.clock()
 
     for i in range(number):
-         result = crossover(indi,other_indi)
+         (indi,other_indi) = crossover(indi,other_indi)
 
     return time.clock() - inicioTiempo
 
