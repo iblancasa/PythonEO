@@ -7,7 +7,7 @@ def time_mutations(number, indi):
     inicioTiempo = time.clock()
 
     for i in range(number):
-         mutate1(indi)
+        mutie = mutate1(indi)
 
     return time.clock() - inicioTiempo
 
