@@ -17,5 +17,5 @@ top_length = 32768
 
 while not length > top_length:
     indi =  random_chromosome(length)
-    print("python-BitString, " + str(length) +", "+ str(time_mutations( iterations, indi )))
+    print("python-BitFlip, " + str(length) +", "+ str(time_mutations( iterations, indi )))
     length = length*2
