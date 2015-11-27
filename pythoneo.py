@@ -35,13 +35,7 @@ def crossover(chrom1, chrom2):
     xover_point = randint(1,length - 1)
     scope = 1 + randint(0,length - xover_point - 1)
 
-    new_chrom1 = chrom1[:xover_point]
-    new_chrom2 = chrom2[:xover_point]
+    new_chrom1 = chrom1[:xover_point] + chrom2[xover_point:xover_point+scope] + chrom1[xover_point+scope:]
+    new_chrom2 = chrom2[:xover_point] + chrom1[xover_point:xover_point+scope] + chrom2[xover_point+scope:]
 
-    new_chrom1 += chrom2[xover_point:xover_point+scope]
-    new_chrom2 += chrom1[xover_point:xover_point+scope]
-
-    new_chrom1 += chrom1[xover_point+scope:]
-    new_chrom2 += chrom2[xover_point+scope:]
-
-    return (new_chrom1,new_chrom2)
+    return (new_chrom1, new_chrom2)
