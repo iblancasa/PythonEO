@@ -1,13 +1,13 @@
 # PythonEO
 A smallish evolutionary algorithm library in Python
 
-Adapting [LunEO](https://github.com/JJ/LunEO) to pypy from the Python adaptation.
+Adapting [LunEO](https://github.com/JJ/LunEO) to Python.
 
-This is just an adaptation from Python code without any modifications but the interpreter which must be used.
+It uses bitarray as data structure.
 
 ## How to run this code
 
-- Install pypy using your system package manager.
+- Install bitarray using pip
 
 - Execute the code (bitflip.py, onemax.py, test.py and xover.py).
 
