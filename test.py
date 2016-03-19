@@ -1,10 +1,8 @@
 #!/usr/bin/env python
-
-import unittest
-import os
 import sys
-sys.path.append(os.getcwd())
-from pythoneo import *
+import os
+import unittest
+from pythoneo.pythoneo import *
 
 
 class Tester(unittest.TestCase):

@@ -1,6 +1,8 @@
 #!/usr/bin/env python
 import time
-from pythoneo import *
+import sys
+import os
+from pythoneo.pythoneo import *
 
 # Mutate and compute time
 def time_mutations(number, indi, other_indi):
