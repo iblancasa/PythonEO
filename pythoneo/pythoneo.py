@@ -1,6 +1,7 @@
 #!/usr/bin/env python
 
 from random import *
+from math import cos,sqrt
 from bitarray import bitarray
 from collections import Counter
 
@@ -39,3 +40,15 @@ def crossover(chrom1, chrom2):
     new_chrom2 = chrom2[:xover_point] + chrom1[xover_point:xover_point+scope] + chrom2[xover_point+scope:]
 
     return (new_chrom1, new_chrom2)
+
+def griewank(chrom):
+    sumt = 0
+    prod = 1
+    l = len(chrom)
+
+    for i in range(1,l):
+        xi = chrom[i-1]
+        sumt+=(xi*xi)/4000
+        prod*=cos(xi/sqrt(i))
+
+    return sumt-prod+1
