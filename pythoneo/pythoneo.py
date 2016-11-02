@@ -47,7 +47,7 @@ def griewank(chrom):
     l = len(chrom)
 
     for i in range(1,l):
-        xi = chrom[i-1]
+        xi = float(chrom[i-1])
         sumt+=(xi*xi)/4000
         prod*=cos(xi/sqrt(i))
 
